@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+}
