@@ -20,7 +20,7 @@ function renderNewLayout() {
             createLayout(listItems[i])
         }
     } else {
-        const emptyList = `<p class="bg-warning">Não há itens na sua lista</p>`;
+        const emptyList = `<p class="text-light bg-secondary">Não há itens na sua lista</p>`;
 
         itemList.innerHTML = emptyList
     }
@@ -41,7 +41,7 @@ function createLayout(listItems) {
     checkA.className = "complete-item mx-2 item-icon"
     delA.className = "delete-item mx-2 item-icon"
 
-    checkA.addEventListener('click', () => console.log('botao check ta funcionando'));
+    checkA.addEventListener('click', toggleIcon);
     delA.addEventListener('click', removeItem);
     checkA.id = "checkItem";
     delA.id = 'deleteItem';
@@ -57,6 +57,10 @@ function createLayout(listItems) {
     div.appendChild(delA);
 
     itemList.appendChild(mainDiv);
+}
+
+function toggleIcon() {
+    console.log('botao check ta funcionando')
 }
 
 function removeItem(evento) {
@@ -75,8 +79,6 @@ function removeItem(evento) {
 
     renderNewLayout();
 }
-
-
 
 function removeAll() {
     listItems = [];
